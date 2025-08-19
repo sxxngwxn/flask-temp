@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>무신사</title>
+    <link rel="stylesheet" href="/static/css/mstyle.css" />
+    <link rel="stylesheet" href="/static/css/mside.css" />
+    <link rel="shortcut icon" href="/static/asset/imgs/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="container">
+      <!-- 🔹 Top Navigation Bar -->
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a href="#">
+            <img src="/static/asset/imgs/nav_left.png" alt="" />
+          </a>
+        </div>
+
+        <div class="nav-right">
+          <a href="{{ url_for('mypage') }}">
+            <img src="/static/asset/imgs/nav_right.png" alt="" />
+          </a>
+        </div>
+      </nav>
+
+      <!-- 🔹 Header -->
+      <header>
+        <img src="/static/asset/imgs/header.png" id="header" alt="이미지" />
+
+        <!-- 클릭 가능한 핫스폿 -->
+        <div class="hotspot hotspot-left"></div>
+        <div class="hotspot hotspot-right"></div>
+
+        <a href="/">
+          <img src="/static/asset/imgs/search_bar.png" alt="" id="search_bar" />
+        </a>
+      </header>
+
+      <!-- 🔹 Contents_text -->
+      <div id="contents_text_area">
+        <img src="/static/asset//imgs/contents_text.png" alt="" />
+      </div>
+
+      <!-- 🔹 Carousel -->
+      <div class="carousel">
+        <button class="carousel-btn prev"><img src="/static/asset/imgs/prev.png" alt="" /></button>
+        <div class="carousel-window">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img1.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img2.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img3.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img4.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img5.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img6.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img7.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img8.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img9.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img10.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img11.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img12.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img13.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img14.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img15.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img16.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img17.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img18.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img19.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img20.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img21.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img22.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img23.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img24.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img25.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img26.png" /></div>
+            <div class="carousel-slide"><img src="/static/asset/carousel_imgs/img27.png" /></div>
+          </div>
+        </div>
+        <button class="carousel-btn next"><img src="/static/asset/imgs/next.png" alt="" /></button>
+      </div>
+
+      <!-- 🔹 Recommended Products -->
+      <div class="tag-btns">
+        <div>
+          <a href=""><img src="/static/asset/btn_imgs/mimg1.jpeg" alt="" /><span>잡화 페스티벌</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg2.jpeg" alt="" /><span>레드윙데이</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg3.png" alt="" /><span>우먼즈 트렌드</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg4.jpeg" alt="" /><span>최저가 보상제</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg5.png" alt="" /><span>돈 버는 회원혜택</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg6.jpeg" alt="" /><span>990딜</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg7.jpeg" alt="" /><span>폭염대비</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg8.png" alt="" /><span>무신사머니</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg9.png" alt="" /><span>상품권 선물하기</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg10.jpeg" alt="" /><span>우먼즈 브랜드위크</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg11.png" alt="" /><span>타임세일</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg12.png" alt="" /><span>무배당발</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg13.png" alt="" /><span>후기왕</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg14.png" alt="" /><span>체험단</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg15.png" alt="" /><span>컬러풀 홈패브릭</span></a>
+          <a href=""><img src="/static/asset/btn_imgs/mimg16.png" alt="" /><span>라이브</span></a>
+        </div>
+      </div>
+      <img src="/static/asset/imgs/p1.png" alt="" id="p1" />
+    </div>
+    <div></div>
+
+    <div class="sidebar-container">
+      <aside class="sb-panel" id="sbPanel" aria-labelledby="sbTitle" role="dialog">
+        <div class="sb-header">
+          <h3 id="sbTitle">주문 데이터 입력</h3>
+          <div class="sb-actions">
+            <button class="sb-btn ghost" id="closeSidebarBtn">닫기</button>
+            <button class="sb-btn primary" id="saveSidebarBtn">저장</button>
+          </div>
+        </div>
+
+        <div class="sb-body">
+          <!-- 이하 내용은 동일 (생략 없이 붙여 넣어 사용 가능) -->
+          <div class="sb-field">
+            <label>주문번호</label>
+            <input type="text" placeholder="예: 202507171207270001" id="orderNumber" />
+          </div>
+
+          <div class="sb-section">
+            <h4>주문 내역</h4>
+            <div class="sb-field">
+              <label>이미지 (여러 개 가능)</label>
+              <textarea rows="3" placeholder="예: 복사한 이미지 주소" id="orderImages"></textarea>
+            </div>
+            <div class="sb-field">
+              <label>브랜드 (여러 개 가능)</label>
+              <textarea rows="2" placeholder="예: 아디다스, 와키윌리" id="orderBrands"></textarea>
+            </div>
+            <div class="sb-field">
+              <label>제품명 (여러 개 가능)</label>
+              <textarea
+                rows="3"
+                placeholder="예: 메인캠퍼스 HEAVENLY HEARTS PINK, 버뮤다 데님 숏팬츠 인디고"
+                id="orderProducts"
+              ></textarea>
+            </div>
+            <div class="sb-field">
+              <label>제품 옵션 (여러 개 가능)</label>
+              <textarea rows="3" placeholder="예: ONESIZE / 1개, M / 1개" id="orderOptions"></textarea>
+            </div>
+            <div class="sb-field">
+              <label>가격 (여러 개 가능)</label>
+              <textarea rows="2" placeholder="예: 67000, 45000" id="orderPrices"></textarea>
+            </div>
+          </div>
+
+          <div class="sb-section">
+            <h4>주문 상세</h4>
+            <div class="sb-field">
+              <label>주문자 성함</label><input type="text" placeholder="예: 홍길동" id="orderName" />
+            </div>
+            <div class="sb-field">
+              <label>배송지</label
+              ><textarea
+                rows="2"
+                placeholder="예: 서울특별시 송파구 올림픽로 300 + 상세주소"
+                id="orderAddress"
+              ></textarea>
+            </div>
+            <div class="sb-field">
+              <label>전화번호</label><input type="text" placeholder="예: 010-1234-5678" id="orderPhone" />
+            </div>
+            <div class="sb-field">
+              <label>상품 금액</label><input type="text" placeholder="예: 89000" id="productPrice" />
+            </div>
+            <div class="sb-field">
+              <label>할인 금액</label><input type="text" placeholder="예: 21020" id="discountPrice" />
+            </div>
+            <div class="sb-field">
+              <label>적립금 사용액</label><input type="text" placeholder="예: 6600" id="useSaving" />
+            </div>
+            <div class="sb-field">
+              <label>할인률</label><input type="text" placeholder="예: 33" id="discountPercent" />
+            </div>
+            <div class="sb-field">
+              <label>결제 금액</label><input type="text" placeholder="예: 67980" id="payPrice" />
+            </div>
+            <div class="sb-field">
+              <label>결제 수단 (option)</label
+              ><textarea
+                rows="2"
+                placeholder="예: 네이버페이 - 현대카드(일시불), 토스-토스뱅크"
+                id="payMethod"
+              ></textarea>
+            </div>
+            <div class="sb-field">
+              <label>총 할인 금액</label><input type="text" placeholder="예: 21020" id="allDiscountPrice" />
+            </div>
+            <div class="sb-field">
+              <label>후기 적립 금액</label><input type="text" placeholder="예: 2500" id="accruedPrice" />
+            </div>
+          </div>
+
+          <div class="sb-section">
+            <h4>거래명세서</h4>
+            <div class="sb-field">
+              <label>결제 수단</label><input type="text" placeholder="예: 네이버페이 + 적립금 + 쿠폰" id="howPayment" />
+            </div>
+            <div class="sb-field">
+              <label>브랜드(영문) + 제품명 (여러 개 가능)</label>
+              <textarea
+                rows="3"
+                placeholder="예: [arena] 립텝 선수 삼각 A5SM1CT04GRN, [adidas] ..."
+                id="productNames"
+              ></textarea>
+            </div>
+            <div class="sb-field">
+              <label>옵션 (여러 개 가능)</label>
+              <textarea rows="3" placeholder="예: GRN / 105,  ONESIZE ..." id="options"></textarea>
+            </div>
+            <div class="sb-field">
+              <label>가격 (여러 개 가능)</label>
+              <textarea rows="3" placeholder="예: 89000, 48000 ..." id="prices"></textarea>
+            </div>
+            <div class="sb-field">
+              <label>수량 (여러 개 가능)</label>
+              <textarea rows="2" placeholder="예: 1, 2 ..." id="amounts"></textarea>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/indexed.js"></script>
+  </body>
+</html>

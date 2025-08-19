@@ -1,0 +1,22 @@
+{% extends "app/base.html" %} {% block message %} {% with messages = get_flashed_messages(with_categories = true) %} {%
+if messages %}
+<p>{{messages[0][1]}}</p>
+{% endif %} {% endwith %} {% endblock message %} {% block title %}로그인 | MyService{% endblock %} {% block contents %}
+<section class="form-section">
+  <div class="form-box">
+    <h2 class="form-title">로그인</h2>
+    <form action="{{ url_for('signin') }}" method="post">
+      <label for="email">이메일</label>
+      <input type="email" name="email" id="email" placeholder="email@example.com" required />
+
+      <label for="password">비밀번호</label>
+      <input type="password" name="password" id="password" placeholder="비밀번호" required />
+
+      <label for="license">라이선스 키</label>
+      <input type="password" name="license" id="license" placeholder="라이선스 키" required />
+
+      <button type="submit" class="btn full">로그인</button>
+    </form>
+  </div>
+</section>
+{% endblock contents%}

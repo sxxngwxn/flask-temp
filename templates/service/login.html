@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/mstyle.css" />
+    <link rel="shortcut icon" href="/static/asset/imgs/favicon.ico" type="image/x-icon" />
+    <title>로그인 | 무신사</title>
+  </head>
+  <body>
+    <div id="container">
+      <!-- 🔹 Top Navigation Bar -->
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a href="">
+            <img src="/static/asset/imgs/nav_left.png" alt="" />
+          </a>
+        </div>
+
+        <div class="nav-right">
+          <a href="">
+            <img src="/static/asset/imgs/nav_right.png" alt="" />
+          </a>
+        </div>
+      </nav>
+
+      <div id="input-container">
+        <div>
+          <img src="/static/asset/imgs/login_title.png" alt="" id="login_title" />
+
+          <div id="inputs">
+            <div class="input-wrap">
+              <input type="text" id="username" placeholder="아이디" value="nav222" />
+              <a href="">
+                <img src="/static/asset/imgs/delete.png" class="clear-btn" id="clear-username" />
+              </a>
+            </div>
+
+            <div class="input-wrap">
+              <input type="password" id="password" placeholder="비밀번호" />
+              <a href="">
+                <img src="/static/asset/imgs/delete.png" class="clear-btn" id="clear-password" />
+              </a>
+              <a href="">
+                <img src="/static/asset/imgs/eye.png" class="eye-btn" id="toggle-password" />
+              </a>
+            </div>
+
+            <div class="input-wrap-btn">
+              <button id="login_btn">로그인</button>
+            </div>
+          </div>
+          <img src="/static/asset/imgs/under_login.png" alt="" id="under_login" />
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

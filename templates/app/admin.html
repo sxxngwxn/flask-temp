@@ -1,0 +1,50 @@
+{% extends "app/base.html" %} {% block message %} {% with messages = get_flashed_messages(with_categories=true) %} {% if
+messages %}
+<p>{{ messages[0][1] }}</p>
+{% endif %} {% endwith %} {% endblock message %} {% block user %}
+{% endblock user %} {% block title %}IXLO | 관리자{% endblock %} {% block contents %}
+<section class="admin-section">
+  <div class="admin-box">
+    <h2 class="admin-title">🔧 관리자 페이지</h2>
+
+    <!-- 라이선스 생성 폼 -->
+    <form method="POST" action="{{ url_for('generate_license') }}" class="form-box compact">
+      <label for="new_license">새 라이선스 키 생성</label>
+      <input type="text" id="new_license" name="new_license" placeholder="예: meme-meme-meme-meme" required />
+      <button type="submit" class="btn full">등록</button>
+    </form>
+
+    <h3 class="section-title">📄 현재 등록된 라이선스 키</h3>
+    <div class="table-wrapper">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>라이선스 키</th>
+            <th>사용 가능 상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key, info in license_keys.items() %}
+          <tr>
+            <td>{{ key }}</td>
+            <td class="status">{{ "✅" if info.valid else "❌" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 유저 이메일 발송 폼 추가 -->
+    <h3 class="section-title">📧 유저에게 이메일 보내기</h3>
+    <form action="{{ url_for('send_user_email') }}" method="POST" class="form-box">
+      <label for="email">유저 이메일:</label>
+      <input type="email" name="email" placeholder="user@example.com" required />
+
+      <label for="message">라이선스:</label>
+      <input name="message" placeholder="라이선스를 입력하세요." required></input>
+
+      <button type="submit" class="btn full">메일 보내기</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

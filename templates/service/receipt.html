@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/static/asset/imgs/favicon.ico" type="image/x-icon" />
+    <title>매출전표</title>
+    <link rel="stylesheet" href="/static/css/mreceipt.css" />
+  </head>
+  <script>
+    window.onload = async function () {
+      window.resizeTo(385, 300);
+    };
+  </script>
+  <body>
+    <div class="receipt-container">
+      <div class="receipt-info">
+        <dl>
+          <dt>이용상점</dt>
+          <dd>
+            주식회사 무신사 | 조만호, 박준모 | 사업자등록번호: 211-88-79575 | 전화: 1544-7199 | 주소: 서울특별시 성동구
+            아차산로 13길 11, 1층 (성수동2가, 무신사캠퍼스 엔1)
+          </dd>
+        </dl>
+        <dl>
+          <dt>결제서비스 업체</dt>
+          <dd>
+            무신사페이먼츠 | 최영준 | 사업자등록번호: 578-81-01933 | 전화: 1544-7199 | 주소: 서울특별시 성동구 연무장길
+            83 3층 (무신사캠퍼스 E1)
+          </dd>
+        </dl>
+        <ul class="receipt-footer__bullet">
+          <li class="receipt-footer__bullet__normal">
+            부가가치세법 제46조 3항에 따라 신용카드 매출전표도 매입세금계산서로 사용할 수 있습니다.
+          </li>
+        </ul>
+      </div>
+
+      <div class="close-btn">
+        <button class="receipt-close">닫기</button>
+      </div>
+    </div>
+
+    <script src="/static/js/indexed.js"></script>
+  </body>
+</html>

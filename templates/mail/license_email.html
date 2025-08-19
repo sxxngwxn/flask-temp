@@ -1,0 +1,79 @@
+<!-- license_email.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>라이선스 코드 안내</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+      }
+      .license-box {
+        background-color: #f0f4ff;
+        border-left: 4px solid #4f46e5; /* 브랜드 색상 강조 */
+        padding: 15px;
+        margin: 20px 0;
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 4px;
+        word-break: break-all;
+      }
+      .footer {
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+        margin-top: 30px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4f46e5;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>MyService 라이선스 코드 안내</h1>
+      <p>
+        안녕하세요, {{ username }}님!<br />
+        MyService를 이용해 주셔서 감사합니다.<br />
+        아래 라이선스 코드를 사용하여 서비스를 활성화해 주세요.
+      </p>
+
+      <div class="license-box">{{ license_code }}</div>
+
+      <p>라이선스 코드 사용에 문제가 있거나 문의사항이 있으면, 아래 버튼을 통해 문의해주세요.</p>
+      <p style="text-align: center">
+        <a href="mailto:support@myservice.com" class="btn">문의하기</a>
+      </p>
+
+      <div class="footer">© 2025 IXLO. 모든 권리는 IXLO에 있습니다.</div>
+    </div>
+  </body>
+</html>

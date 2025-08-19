@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="shortcut icon" href="/static/asset/imgs/favicon1.ico" type="image/x-icon" />
+    <title>{% block title %}IXLO{% endblock title %}</title>
+  </head>
+  <body>
+    <!-- 플래시 메시지 영역 -->
+    <div class="flash-container">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in
+      messages %}
+      <div class="flash-message flash-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <div class="logo width120">
+          {% if session.email %}
+          <a href="{{ url_for('index') }}">IXLO</a>
+          {% else %}
+          <a href="{{url_for('index')}}">Lolem ipsum</a>
+          {% endif %}
+        </div>
+        {% if session.email %}
+        <div>
+          <span class="welcome">환영합니다, {{ session.username }}님!</span>
+        </div>
+        <div>
+          <a class="btn width120" href="{{ url_for('logout') }}">로그아웃</a>
+        </div>
+        {% else %}
+        <div>
+          <a class="btn" href="{{ url_for('signin') }}">로그인</a>
+          <a class="btn" href="{{ url_for('signup') }}">회원가입</a>
+        </div>
+        {% endif %} {% block user %} {% endblock user %}
+      </div>
+    </header>
+
+    <main class="main">{% block contents %} {% endblock contents %}</main>
+    <footer class="footer">© 2025 IXLO</footer>
+
+    <script src="/static/js/base.js"></script>
+  </body>
+</html>

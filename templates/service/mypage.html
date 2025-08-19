@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/mstyle.css" />
+    <link rel="shortcut icon" href="/static/asset/imgs/favicon.ico" type="image/x-icon" />
+    <title>마이페이지 | 무신사</title>
+  </head>
+  <body>
+    <div id="container">
+      <!-- 🔹 Top Navigation Bar -->
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a href="{{url_for('main')}}">
+            <img src="/static/asset/imgs/nav_left.png" alt="" />
+          </a>
+        </div>
+
+        <div class="nav-right">
+          <a href="/">
+            <img src="/static/asset/imgs/nav_right.png" alt="" />
+          </a>
+        </div>
+      </nav>
+
+      <div id="mypage-container">
+        <img src="/static/asset/imgs/mypage-top.png" alt="" id="mypage-top" />
+
+        <div class="profile-container">
+          <!-- 🔹 상단 프로필 영역 -->
+          <div class="profile-header">
+            <a href="">
+              <img src="/static/asset/imgs/profile.png" alt="프로필" class="profile-img" />
+            </a>
+            <div class="profile-info">
+              <div class="profile-top">
+                <span class="profile-name">{{session.username}}</span>
+                <a href="">
+                  <div>
+                    <img src="/static/asset/imgs/question_mark.png" alt="방패" class="shield-icon" />
+                    <span class="profile-sub">자주 구매한 브랜드 모아 보기</span>
+                    <img src="/static/asset/imgs/right_arrow.png" alt="" class="right_arrow" />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <a class="snap-profile-btn">스냅 프로필</a>
+          </div>
+
+          <div class="profile-carousel-conrainer">
+            <a href="/">
+              <div class="profile-carousel">
+                <span class="carousel-item active">이번 달 간에 4,802,402원 더 썼다면 등급업!</span>
+                <span class="carousel-item">XYZ 프리미엄 0.5% 추가 적립</span>
+                <span class="carousel-item">최대 5% 적립 혜택</span>
+              </div>
+              <div>
+                <img src="/static/asset/imgs/right_arrow_blue.png" alt="/" class="right_arrow_blue" />
+              </div>
+            </a>
+          </div>
+
+          <div class="shortcut-grid-container">
+            <!-- 🔹 적립/머니/쿠폰 영역 -->
+            <div class="profile-stats">
+              <div class="stat-box">
+                <div class="stat-title">적립금 &gt;</div>
+                <div class="stat-value">4원</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-title">무신사머니 &gt;</div>
+                <div class="stat-value">충전하기</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-title">쿠폰 &gt;</div>
+                <div class="stat-value">324장</div>
+              </div>
+            </div>
+
+            <div class="profile-review">작성 가능한 후기 216개 <span class="blue"> 355,000원 적립 가능 &gt;</span></div>
+            <!-- 🔹 후기 영역 -->
+          </div>
+        </div>
+        <div id="what">
+          <div class="main-carousel-container">
+            <div class="main-carousel-slide">
+              <div class="main-carousel-item active bg-blue">
+                <img src="/static/asset/imgs/mmoney.png" class="main-carousel-icon" alt="icon" />
+                <div class="main-carousel-text">
+                  <p class="main-carousel-text-title">무신사머니 런칭</p>
+                  <p class="main-carousel-text-content">첫 결제 시 10% 추가 적립</p>
+                </div>
+                <img src="/static/asset/imgs/blue_arrow.png" class="main-carousel-arrow" alt="arrow" />
+              </div>
+
+              <div class="main-carousel-item">
+                <img src="/static/asset/imgs/threestar.png" class="main-carousel-icon" alt="icon" />
+                <div class="main-carousel-text">
+                  <p class="main-carousel-text-title">무신사 후기왕</p>
+                  <p class="main-carousel-text-content">100만원 적립금의 후기왕에 도전해보세요</p>
+                </div>
+                <img src="/static/asset/imgs/gray_arrow.png" class="main-carousel-arrow" alt="arrow" />
+              </div>
+            </div>
+
+            <!-- 인디케이터: slide 밖으로 이동 -->
+            <div class="main-carousel-indicators">
+              <span class="active"></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <a href="{{url_for('orderlist')}}">
+          <img src="/static/asset/imgs/mypage.png" alt="" id="mypage" />
+        </a>
+      </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>
