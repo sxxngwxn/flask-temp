@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Musinsa"; /* 사용할 이름 (임의 지정) */
+  src: url("/static/fonts/Musinsa.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap; /* FOUT 제어: swap / fallback / optional 등 */
+}
+
+@font-face {
+  font-family: "Apple SD Neo"; /* 사용할 이름 (임의 지정) */
+  src: url("/static/fonts/Musinsa.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap; /* FOUT 제어: swap / fallback / optional 등 */
+}
+
+@font-face {
+  font-family: "NotoSans KR"; /* 사용할 이름 (임의 지정) */
+  src: url("/static/fonts/NotoSansKR-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap; /* FOUT 제어: swap / fallback / optional 등 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.receipt-container {
+  max-width: 385px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #000;
+  margin: 0 auto;
+}
+
+.receipt-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 15px 12px;
+}
+
+.receipt-top img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.receipt-title {
+  font-size: 18px;
+  font-family: "Musinsa" !important;
+  font-weight: 500;
+}
+
+.receipt-section {
+  padding: 0 10px;
+}
+
+.receipt-list {
+  list-style: none;
+  /* font-family: "NotoSans KR"; */
+  padding: 15px 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.receipt-list-def-date {
+  display: block;
+  font-size: 12px;
+  color: #6e6e6e;
+}
+
+.receipt-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.receipt-list li:nth-child(n + 2) {
+  margin-top: 10px;
+}
+
+.receipt-list li span:first-child {
+  display: block;
+  width: 40%;
+  margin-right: 15px;
+  color: #6e6e6e;
+}
+
+.receipt-list li span:last-child {
+  display: block;
+  width: 60%;
+  color: #000;
+  text-align: right;
+}
+
+.highlight span {
+  font-weight: 700 !important;
+  color: #14aaff !important;
+}
+
+.receipt-info {
+  font-size: 12px;
+  padding: 15px 15px 30px;
+}
+
+.receipt-info dl {
+  margin-bottom: 15px;
+  color: #6e6e6e;
+}
+
+.receipt-info dt {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.receipt-info dd {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+}
+
+.receipt-footer__bullet {
+  list-style: none; /* 기본 ul 점 제거 */
+  margin: 0;
+  display: block;
+}
+
+.receipt-footer__bullet__normal {
+  position: relative;
+  padding-left: 9px; /* 점과 텍스트 간격 */
+  color: #6e6e6e;
+}
+
+.receipt-footer__bullet__normal::before {
+  content: "•"; /* 점 모양 */
+  position: absolute;
+  left: 0; /* 왼쪽에 고정 */
+  top: 30%; /* 세로 중앙 */
+  transform: translateY(-50%);
+  font-size: 13px; /* 점 크기 */
+  color: #888; /* 점 색상 */
+}
+
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.receipt-close {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Apple SD Neo";
+}

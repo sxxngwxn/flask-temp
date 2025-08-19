@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "Pretendard"; /* 사용할 이름 (임의 지정) */
+  src: url("/static/fonts/Pretendard.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap; /* FOUT 제어: swap / fallback / optional 등 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard";
+}
+
+.receipt-container {
+  max-width: 600px;
+  background: #fff;
+  height: 1000px;
+  color: #000;
+  margin: 0 auto;
+  border-left: 1px solid #8a8a8a1a;
+  border-right: 1px solid #8a8a8a1a;
+}
+
+.receipt-title {
+  padding: 24px 16px 12px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.receipt-list > dl {
+  justify-content: space-between;
+  padding: 4px 16px;
+  display: flex;
+}
+
+.receipt-list > dl:last-child {
+  justify-content: space-between;
+  padding: 4px 16px 12px;
+  display: flex;
+}
+
+.receipt-list dt {
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 2px 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+}
+
+.receipt-list dd {
+  box-sizing: border-box;
+  text-align: right;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 4px 0;
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+}
+
+.divider {
+  height: 1px;
+  margin: 12px 16px;
+  background-color: #8a8a8a1a;
+}
+
+.product-title {
+  padding: 12px 16px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.product-row dl {
+  justify-content: space-between;
+  padding: 4px 16px;
+  display: flex;
+  padding-bottom: 12px;
+}
+
+.product-row dt {
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 2px 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+}
+
+.product-row dt span:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666;
+}
+
+.product-row dd {
+  box-sizing: border-box;
+  text-align: right;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 4px 0;
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+}
+
+.product-row dd span:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666;
+}
+
+.store-info div:first-child {
+  padding: 12px 16px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.store-info div:nth-child(2) {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 4px 16px 12px;
+  letter-spacing: -0.1px;
+  color: #666;
+}
+
+.custom-bullet-list {
+  list-style: none; /* 기본 불릿 제거 */
+  margin: 0;
+  padding: 0 16px;
+}
+
+.custom-bullet-list li {
+  color: #666;
+  padding-left: 11px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  position: relative;
+}
+
+.custom-bullet-list li::before {
+  content: "•"; /* 점 모양 */
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 13px;
+  line-height: 1;
+  color: #666;
+}
+
+.seal-area {
+  text-align: left;
+  box-sizing: content-box;
+  width: 40px;
+  height: 40px;
+  padding: 8px 16px 60px;
+}
+
+.seal-area img {
+  width: 40px;
+}
