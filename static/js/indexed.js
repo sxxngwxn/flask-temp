@@ -66,6 +66,37 @@ if (dataSaveBtn) {
   });
 }
 
+const dataDelBtn = document.getElementById("deleteSidebarBtn");
+
+if (dataDelBtn) {
+  dataDelBtn.addEventListener("click", function (e) {
+    // IndexedDB 열기
+    const request = indexedDB.open("myDatabase", 1);
+
+    request.onsuccess = function (event) {
+      const db = event.target.result;
+
+      const transaction = db.transaction("myStore", "readwrite");
+      const store = transaction.objectStore("myStore");
+
+      // 모든 데이터 삭제
+      const deleteReq = store.clear();
+
+      deleteReq.onsuccess = function (event) {
+        console.log("모든 데이터 삭제 완료");
+      };
+
+      deleteReq.onerror = function (event) {
+        console.error("삭제 중 오류 발생", event.target.error);
+      };
+    };
+
+    request.onerror = function (event) {
+      console.error("DB 열기 실패", event.target.error);
+    };
+  });
+}
+
 function getOrderDatas() {
   return new Promise((resolve, reject) => {
     let store = db.transaction("datas", "readonly").objectStore("datas");

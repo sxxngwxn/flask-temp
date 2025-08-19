@@ -97,6 +97,15 @@ body {
   background-color: #3a6ed0;
 }
 
+.sb-btn.delete {
+  background-color: #ff4c4c; /* 밝은 레드 */
+  color: white;
+}
+
+.sb-btn.delete:hover {
+  background-color: #e04343; /* hover 시 조금 진한 레드 */
+}
+
 /* ===== 내용 영역 ===== */
 .sb-body {
   flex: 1;
