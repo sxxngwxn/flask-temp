@@ -1103,3 +1103,67 @@ header {
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* 공통 버튼 스타일 */
+.circle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  position: fixed;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* 이미지 버튼 */
+.circle-btn.image {
+  bottom: 70px;
+  right: 152px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+.circle-btn.image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#imageBtn1 {
+  bottom: 15px !important;
+}
+
+/* 텍스트 버튼 */
+.circle-btn.text {
+  bottom: 15px;
+  right: 152px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* 위로 가기 버튼 */
+.circle-btn.up {
+  bottom: 15px;
+  right: 152px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  display: none; /* 기본은 숨김 */
+  overflow: hidden;
+}
+
+.circle-btn.up img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 숨김 상태 */
+.hidden {
+  display: none !important;
+}

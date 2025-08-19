@@ -193,3 +193,49 @@ if (track) {
     nextBtn.click();
   }, 4000);
 }
+
+let lastScrollY = window.scrollY;
+
+const imageBtn = document.getElementById("imageBtn");
+const imageBtn1 = document.getElementById("imageBtn1");
+const textBtn = document.getElementById("textBtn"); // 페이지 2에는 null
+const upBtn = document.getElementById("upBtn");
+
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+  const scrollingDown = currentScrollY > lastScrollY;
+
+  // 맨 위
+  if (currentScrollY === 0) {
+    if (imageBtn) imageBtn.classList.remove("hidden");
+    if (textBtn) textBtn.classList.remove("hidden");
+    if (upBtn) upBtn.style.display = "none";
+  }
+  // 스크롤 내림
+  else if (scrollingDown) {
+    if (imageBtn1) imageBtn1.classList.add("hidden"); // ✅ 반드시 숨김
+    if (textBtn) textBtn.classList.add("hidden");
+    if (upBtn) {
+      upBtn.style.display = "flex";
+      upBtn.style.bottom = "15px"; // 내릴 때 기존 버튼 자리
+    }
+  }
+  // 스크롤 올림
+  else {
+    if (imageBtn1) imageBtn1.classList.remove("hidden");
+    if (textBtn) textBtn.classList.remove("hidden");
+    if (upBtn) {
+      upBtn.style.display = "flex";
+      upBtn.style.bottom = textBtn ? "125px" : "70px"; // 페이지 구분
+    }
+  }
+
+  lastScrollY = currentScrollY;
+});
+
+// 위로 가기 버튼 클릭
+if (upBtn) {
+  upBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
