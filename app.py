@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from dotenv import load_dotenv
 import os
 from auth.auth import AuthModule
-from auth.refresh import refresh_id_token
 from auth.firebase_set import FirebaseApp
 from database.db_handle import DBModule
 from datetime import datetime, timezone, timedelta
@@ -45,23 +44,6 @@ mail = Mail(app)
 firebase_app = FirebaseApp()
 auth_module = AuthModule(firebase_app)
 db_module = DBModule(firebase_app)
-
-# # 토큰 확인 및 연장
-# @app.before_request
-# def refresh_token_if_needed():
-#     if "email" in session and "token_expiry" in session:
-#         now = time.time()
-#         # 토큰 만료까지 5분 이하 남으면 갱신
-#         if session["token_expiry"] - now < 300:
-#             refresh_result = refresh_id_token(session["refresh_token"], API_KEY)
-#             if refresh_result["success"]:
-#                 session["id_token"] = refresh_result["id_token"]
-#                 session["refresh_token"] = refresh_result["refresh_token"]
-#                 session["token_expiry"] = time.time() + refresh_result["expires_in"]
-#             else:
-#                 session.clear()
-#                 flash("세션이 만료되어 로그아웃되었습니다.")
-#                 return redirect(url_for("signin"))
 
 # 메인
 @app.route("/")
