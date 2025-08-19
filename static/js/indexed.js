@@ -70,29 +70,23 @@ const dataDelBtn = document.getElementById("deleteSidebarBtn");
 
 if (dataDelBtn) {
   dataDelBtn.addEventListener("click", function (e) {
-    // IndexedDB 열기
-    const request = indexedDB.open("myDatabase", 1);
+    if (!db) {
+      console.error("DB가 아직 열리지 않았습니다.");
+      return;
+    }
 
-    request.onsuccess = function (event) {
-      const db = event.target.result;
+    const transaction = db.transaction("datas", "readwrite");
+    const store = transaction.objectStore("datas");
 
-      const transaction = db.transaction("myStore", "readwrite");
-      const store = transaction.objectStore("myStore");
+    // 모든 데이터 삭제
+    const deleteReq = store.clear();
 
-      // 모든 데이터 삭제
-      const deleteReq = store.clear();
-
-      deleteReq.onsuccess = function (event) {
-        console.log("모든 데이터 삭제 완료");
-      };
-
-      deleteReq.onerror = function (event) {
-        console.error("삭제 중 오류 발생", event.target.error);
-      };
+    deleteReq.onsuccess = function () {
+      console.log("모든 데이터 삭제 완료");
     };
 
-    request.onerror = function (event) {
-      console.error("DB 열기 실패", event.target.error);
+    deleteReq.onerror = function (event) {
+      console.error("삭제 중 오류 발생", event.target.error);
     };
   });
 }
