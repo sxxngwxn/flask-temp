@@ -30,12 +30,11 @@ app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # CSRF 방지
 
 # Limiter 설정
 limiter = Limiter(
-    app,
-    key_func=get_remote_address,          # 요청을 IP 기준으로 제한
-    default_limits=["200 per day", "50 per hour"]  # 기본 제한
+    key_func=get_remote_address,
+    default_limits=["200 per day", "50 per hour"]  # 원하는 기본 제한 설정
 )
 
-
+limiter.init_app(app)
 mail = Mail(app)
 
 # API_KEY="" #추후수정
