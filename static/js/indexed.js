@@ -294,6 +294,9 @@ window.onload = async () => {
   const path = window.location.pathname;
 
   switch (true) {
+    case path.includes("main"):
+      history.pushState("", "", "/main/musinsa/recommend?gf=A");
+      break;
     case path.includes("order-list"):
       renderOrderList(data);
       break;
@@ -364,6 +367,7 @@ function renderOrderList(data) {
 }
 
 function renderOrderDetail(data) {
+  history.pushState({}, {}, `/order/order-detail/${data.orderNumber}`);
   const wrapper = document.querySelector(".order-detail-wrapper");
   if (!wrapper) return;
 
@@ -646,6 +650,8 @@ function renderReceipt(data) {
 }
 
 function renderPayment(data) {
+  history.pushState({}, {}, `/order-service/my/order/payment_receipt/${data.orderNumber}?layout=popup`);
+
   const container = document.querySelector(".receipt-container");
   if (!container) return;
 
