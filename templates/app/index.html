@@ -1,9 +1,9 @@
 {% extends "app/base.html"%} {% block user %} {% endblock user %} {% block title %}IXLO | 홈{% endblock %} {% block
 contents %} {% if session.email %}
 <section class="hero">
-  <h1>가짜 주문 기록 생성</h1>
+  <h1>주문 기록 생성</h1>
   <p>스마트 스토어, 리셀러를 위한 주문 기록 생성 페이지</p>
-  <a href="{{ url_for('signin') }}" class="btn">바로 이용하기</a>
+  <a href="{{url_for('main')}}" class="btn">바로 이용하기</a>
 </section>
 
 <section class="features">
@@ -32,7 +32,7 @@ contents %} {% if session.email %}
         <li>텍스트 → 수령인 자동 분해 (일반 정확도)</li>
         <li>1대 기기 사용</li>
       </ul>
-      <a href="{{url_for('main')}}" class="btn full">시작하기</a>
+      <a href="#" class="btn full">시작하기</a>
     </div>
     <div class="plan">
       <h3>Standard</h3>
