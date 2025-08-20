@@ -119,13 +119,13 @@ document.addEventListener("click", (e) => {
 
     // 중앙 계산
     const left = screenLeft + (screenWidth - popupWidth) / 2;
-    const top = screenTop + (screenHeight - popupHeight);
+    const top = screenTop + (screenHeight - popupHeight) + 84;
 
     // 팝업 열기
     window.open(
       "/payment",
       "paymentPopup",
-      `width=${popupWidth},height=${popupHeight},left=${left},top=${top + 84},scrollbars=yes,resizable=yes`
+      `width=${popupWidth},height=${popupHeight},left=${left},top=${0},scrollbars=yes,resizable=yes`
     );
   }
 });
