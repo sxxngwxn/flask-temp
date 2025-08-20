@@ -379,6 +379,60 @@ input:invalid:not(:focus):not(:placeholder-shown) {
   border-bottom: none;
 }
 
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 32px 0;
+  background: #f4f7fb;
+}
+
+.feature-box {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 30, 60, 0.07);
+  width: 300px;
+  max-width: 90vw;
+  padding: 32px 24px;
+  transition: box-shadow 0.3s;
+  text-align: center;
+}
+
+.feature-box:hover {
+  box-shadow: 0 8px 24px rgba(0, 30, 60, 0.13);
+}
+
+.feature-box h3 {
+  font-size: 1.27rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #235092;
+  letter-spacing: 0.5px;
+}
+
+.feature-box p {
+  font-size: 1rem;
+  color: #4b4b4b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 모바일 대응 */
+@media (max-width: 700px) {
+  .features {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding: 18px 0;
+  }
+  .feature-box {
+    width: 95vw;
+    max-width: 400px;
+    padding: 24px 12px;
+  }
+}
+
 /* 요금제 섹션 개선 */
 .pricing {
   max-width: 1200px;

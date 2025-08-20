@@ -1,19 +1,19 @@
 {% extends "app/base.html"%} {% block user %} {% endblock user %} {% block title %}IXLO | 홈{% endblock %} {% block
 contents %} {% if session.email %}
 <section class="hero">
-  <h1>스마트 쇼핑 도우미</h1>
-  <p>리셀러, 스마트스토어 판매자, 반복 구매자를 위한 자동화 툴</p>
-  <a href="{{ url_for('signin') }}" class="btn">지금 시작하기</a>
+  <h1>가짜 주문 기록 생성</h1>
+  <p>스마트 스토어, 리셀러를 위한 주문 기록 생성 페이지</p>
+  <a href="{{ url_for('signin') }}" class="btn">바로 이용하기</a>
 </section>
 
 <section class="features">
   <div class="feature-box">
-    <h3>자동 주소 입력</h3>
-    <p>한 번의 클릭으로 주소 입력 완료</p>
+    <h3>자동 주문 입력</h3>
+    <p>한 번의 저장으로 주문 입력 완료</p>
   </div>
   <div class="feature-box">
-    <h3>계정 관리</h3>
-    <p>로그인 정보 저장 및 자동 로그인 지원</p>
+    <h3>주문 목록 미리보기 (지원 예정)</h3>
+    <p>오타 발생시 재입력 방지를 위한 기능</p>
   </div>
   <div class="feature-box">
     <h3>라이선스 인증</h3>
