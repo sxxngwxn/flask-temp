@@ -226,6 +226,7 @@ a {
 .hero a {
   text-decoration: none;
   color: white;
+  cursor: default;
 }
 
 /* 폼 스타일 개선 */
