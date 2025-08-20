@@ -592,6 +592,12 @@ function renderOrderDetail(data) {
 }
 
 function renderReceipt(data) {
+  history.pushState(
+    {},
+    {},
+    `/mps/receipt/${data.orderNumber}?paymentKey=PP5STE5820NAV00298318177120558&merchantCode=STORE&tid=20250820NP4800729309`
+  );
+
   const container = document.querySelector(".receipt-container");
   if (!container) return;
 
