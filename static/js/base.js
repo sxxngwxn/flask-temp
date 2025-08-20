@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove("using-keyboard");
   });
 
-  console.log("✨ UI/UX 개선 스크립트 로드 완료");
+  // console.log("✨ UI/UX 개선 스크립트 로드 완료");
 });
 
 // CSS 추가 스타일 (JavaScript로 동적 추가)
