@@ -223,6 +223,11 @@ a {
   z-index: 1;
 }
 
+.hero a {
+  text-decoration: none;
+  color: white;
+}
+
 /* 폼 스타일 개선 */
 .form-section,
 .admin-section {
