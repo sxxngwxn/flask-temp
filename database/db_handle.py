@@ -90,7 +90,7 @@ class DBModule:
         return username
     
     def check_license_expire_date(self, license, token):
-        hashed = hashlib.sha256(license.encode()).hexdigest()
+        hashed = license
         license_data = self.db.child("licenses").child(hashed).get(token).val()
         if license_data and "expire_date" in license_data:
             expire_date = datetime.fromisoformat(license_data["expire_date"].rstrip("Z"))

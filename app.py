@@ -153,7 +153,6 @@ def signin():
         else:
             # 기존 사용자 또는 라이선스 등록 후
             # 만료 체크
-
             try:
                 my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
                 if not my_license:
