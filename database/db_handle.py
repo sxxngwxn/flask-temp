@@ -100,3 +100,9 @@ class DBModule:
             if now > expire_date:
                 return True
             return False
+        
+    def check_that_is_my_license(self, license, hashed_license):
+        license_hashed = hashlib.sha256(license.encode()).hexdigest()
+        if(license_hashed == hashed_license):
+            return True
+        return False

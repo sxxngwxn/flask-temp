@@ -129,6 +129,7 @@ def signin():
                 return redirect(url_for("signin"))
 
             try:
+                # 라이선스 키가 사용 가능한지 확인.. // 아 fuck fuckfuckfuckfuck
                 is_valid = db_module.validation_license_key(license=license_key, token=user["idToken"])
             except Exception as e:
                 flash("라이선스 확인 중 오류가 발생했습니다.", "error")
@@ -153,6 +154,11 @@ def signin():
         # 기존 사용자 또는 라이선스 등록 후
         # 만료 체크
         try:
+            my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
+            if(not my_license):
+                flash("본인 라이선스 코드를 사용해 주세요.", "warning")
+                return redirect(url_for("signin"))
+            
             # 사용자의 현재 라이선스 만료 체크
             user_license = user_data.get("license")
             if user_license and db_module.check_license_expire_date(license=user_license, token=user["idToken"]):
