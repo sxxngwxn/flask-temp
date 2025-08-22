@@ -166,10 +166,13 @@ def signin():
         try:
             # 사용자의 현재 라이선스 만료 체크
             user_license = user_data.get("license")
-            if user_license and db_module.check_license_expire_date(license=user_license, token=user["idToken"]):
+            over_expire_date = db_module.check_license_expire_date(license=user_license, token=user["idToken"])
+            logging.error(over_expire_date)
+            if user_license and over_expire_date:
                 flash("구독 기간이 만료되었습니다. 재결제 후 이용해주세요.", "warning")
                 return redirect(url_for("signin"))
         except Exception as e:
+            logging.error(e)
             flash("라이선스 만료 확인 중 오류가 발생했습니다.", "error")
             return redirect(url_for("signin"))
 
