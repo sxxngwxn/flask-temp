@@ -150,31 +150,31 @@ def signin():
             if not (success1 and success2):
                 flash("인증 과정 중 문제가 생겼습니다. 관리자에게 문의해주세요.", "error")
                 return redirect(url_for("signin"))
+        else:
+            # 기존 사용자 또는 라이선스 등록 후
+            # 만료 체크
 
-        # 기존 사용자 또는 라이선스 등록 후
-        # 만료 체크
-
-        try:
-            my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
-            if not my_license:
-                flash("본인 라이선스 코드를 사용해 주세요.", "warning")
+            try:
+                my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
+                if not my_license:
+                    flash("본인 라이선스 코드를 사용해 주세요.", "warning")
+                    return redirect(url_for("signin"))
+            except Exception as e:
+                flash("라이선스 확인 중 오류가 발생했습니다.", "error")
                 return redirect(url_for("signin"))
-        except Exception as e:
-            flash("라이선스 확인 중 오류가 발생했습니다.", "error")
-            return redirect(url_for("signin"))
 
-        try:
-            # 사용자의 현재 라이선스 만료 체크
-            user_license = user_data.get("license")
-            over_expire_date = db_module.check_license_expire_date(license=user_license, token=user["idToken"])
-            logging.error(over_expire_date)
-            if user_license and over_expire_date:
-                flash("구독 기간이 만료되었습니다. 재결제 후 이용해주세요.", "warning")
+            try:
+                # 사용자의 현재 라이선스 만료 체크
+                user_license = user_data.get("license")
+                over_expire_date = db_module.check_license_expire_date(license=user_license, token=user["idToken"])
+                logging.error(over_expire_date)
+                if user_license and over_expire_date:
+                    flash("구독 기간이 만료되었습니다. 재결제 후 이용해주세요.", "warning")
+                    return redirect(url_for("signin"))
+            except Exception as e:
+                logging.error(e)
+                flash("라이선스 만료 확인 중 오류가 발생했습니다.", "error")
                 return redirect(url_for("signin"))
-        except Exception as e:
-            logging.error(e)
-            flash("라이선스 만료 확인 중 오류가 발생했습니다.", "error")
-            return redirect(url_for("signin"))
 
         # 세션 설정
         session.clear()
