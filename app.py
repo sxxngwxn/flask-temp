@@ -154,10 +154,11 @@ def signin():
         # 기존 사용자 또는 라이선스 등록 후
         # 만료 체크
         try:
-            my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
-            if(not my_license):
-                flash("본인 라이선스 코드를 사용해 주세요.", "warning")
-                return redirect(url_for("signin"))
+            if(not user_data.get("admin")):
+                my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
+                if(not my_license):
+                    flash("본인 라이선스 코드를 사용해 주세요.", "warning")
+                    return redirect(url_for("signin"))
             
             # 사용자의 현재 라이선스 만료 체크
             user_license = user_data.get("license")
