@@ -153,8 +153,11 @@ def signin():
 
         # 기존 사용자 또는 라이선스 등록 후
         # 만료 체크
+
+
+        my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
         try:
-            my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
+            logging.error(my_license)
             if not my_license:
                 flash("본인 라이선스 코드를 사용해 주세요.", "warning")
                 return redirect(url_for("signin"))
