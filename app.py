@@ -154,20 +154,30 @@ def signin():
         # 기존 사용자 또는 라이선스 등록 후
         # 만료 체크
         try:
-            if(not user_data.get("admin")):
-                my_license = db_module.check_that_is_my_license(license=license_key, hashed_license=user_data.get("license"))
-                if(not my_license):
+            # 1단계: 일반 사용자는 본인 라이선스 확인
+            if not user_data.get("admin"):
+                my_license = db_module.check_that_is_my_license(
+                    license=license_key, 
+                    hashed_license=user_data.get("license")
+                )
+                if not my_license:
                     flash("본인 라이선스 코드를 사용해 주세요.", "warning")
                     return redirect(url_for("signin"))
             
-            # 사용자의 현재 라이선스 만료 체크
+            # 2단계: 모든 사용자(일반+관리자)의 라이선스 만료 체크
             user_license = user_data.get("license")
-            if user_license and db_module.check_license_expire_date(license=user_license, token=user["idToken"]):
+            if user_license and db_module.check_license_expire_date(
+                license=user_license, 
+                token=user["idToken"]
+            ):
                 flash("구독 기간이 만료되었습니다. 재결제 후 이용해주세요.", "warning")
                 return redirect(url_for("signin"))
         except Exception as e:
-            flash("라이선스 만료 확인 중 오류가 발생했습니다.", "error")
+            # 예상치 못한 오류만 여기서 처리
+            logging.error(f"Unexpected error in license check: {e}")
+            flash("시스템 오류가 발생했습니다.", "error")
             return redirect(url_for("signin"))
+
 
         # 세션 설정
         session.clear()
