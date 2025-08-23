@@ -65,10 +65,33 @@ if (dataSaveBtn) {
       amounts: amounts,
     });
     addReq.addEventListener("success", function (event) {
-      console.log(event.target.result);
+      //   console.log(event.target.result);
+      alert("데이터가 저장되었습니다.");
     });
   });
 }
+
+const deleteButton = document.getElementById("deleteSidebarBtn");
+deleteButton &&
+  deleteButton.addEventListener("click", function (event) {
+    if (!db) {
+      console.error("DB가 아직 열리지 않았습니다.");
+      return;
+    }
+
+    const transaction = db.transaction("datas", "readwrite");
+    const objectStore = transaction.objectStore("datas");
+    const clearRequest = objectStore.clear();
+
+    clearRequest.onsuccess = function () {
+      console.log("모든 데이터 삭제 완료");
+      alert("데이터 삭제 완료");
+    };
+
+    clearRequest.onerror = function (error) {
+      console.error("삭제 중 오류 발생", error.target.error);
+    };
+  });
 
 function getOrderDatas() {
   return new Promise((resolve, reject) => {
