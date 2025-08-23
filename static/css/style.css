@@ -124,7 +124,7 @@ a {
 }
 
 .logo a {
-  color: white;
+  color: var(--text-color);
 }
 
 .logo:hover {
@@ -225,7 +225,7 @@ a {
 
 .hero a {
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
   cursor: default;
 }
 
