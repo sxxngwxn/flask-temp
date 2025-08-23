@@ -266,6 +266,8 @@ window.onload = async () => {
 
   const path = window.location.pathname;
 
+  console.log(path);
+
   switch (true) {
     case path.includes("order-list"):
       renderOrderList(data);
