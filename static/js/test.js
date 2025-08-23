@@ -340,6 +340,8 @@ function renderOrderDetail(data) {
   const wrapper = document.querySelector(".order-detail-wrapper");
   if (!wrapper) return;
 
+  console.log(data);
+
   // --- order-header 한 번만 추가 ---
   if (!wrapper.querySelector(".order-detail-header")) {
     console.log("나왔다 시발아");
