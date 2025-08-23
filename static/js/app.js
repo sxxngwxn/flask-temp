@@ -242,7 +242,7 @@ if (upBtn) {
 
 const login_btn = document.querySelector("#login_btn");
 if (login_btn) {
-  localStorage.setItem("login", "true");
+  login_btn.addEventListener("click", () => localStorage.setItem("login", "true"));
 }
 
 function checkLoginStatus() {
@@ -262,6 +262,11 @@ function checkLoginStatus() {
     loginForm.classList.remove("hidden");
     loggedInUser.classList.add("hidden");
   }
+}
+
+const deleteSidebarBtn = document.querySelector("#deleteSidebarBtn");
+if (deleteSidebarBtn) {
+  deleteSidebarBtn.addEventListener("click", () => localStorage.clear());
 }
 
 // 페이지 로드 시 실행
