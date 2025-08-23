@@ -18,8 +18,11 @@
         </div>
 
         <div class="nav-right">
-          <a href="">
+          <a href="{{ url_for('mypage') }}" id="loggedInUser" class="hidden">
             <img src="/static/asset/imgs/nav_right.png" alt="" />
+          </a>
+          <a href="{{ url_for('login') }}" id="loginForm" class="hidden">
+            <img src="/static/asset/imgs/unlogined.png" alt="" />
           </a>
         </div>
       </nav>

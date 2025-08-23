@@ -239,3 +239,30 @@ if (upBtn) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
+const login_btn = document.querySelector("#login_btn");
+if (login_btn) {
+  localStorage.setItem("login", "true");
+}
+
+function checkLoginStatus() {
+  // localStorage에서 'login' 키 값 확인
+  const isLoggedIn = localStorage.getItem("login");
+
+  // 요소들 가져오기
+  const loggedInUser = document.getElementById("loggedInUser");
+  const loginForm = document.getElementById("loginForm");
+
+  if (isLoggedIn === "true") {
+    // 로그인 상태 - 마이페이지 링크 보여주기
+    loggedInUser.classList.remove("hidden");
+    loginForm.classList.add("hidden");
+  } else {
+    // 로그인 안 한 상태 - 로그인 링크 보여주기
+    loginForm.classList.remove("hidden");
+    loggedInUser.classList.add("hidden");
+  }
+}
+
+// 페이지 로드 시 실행
+document.addEventListener("DOMContentLoaded", checkLoginStatus);
