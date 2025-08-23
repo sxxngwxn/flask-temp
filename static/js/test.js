@@ -342,6 +342,7 @@ function renderOrderDetail(data) {
 
   // --- order-header 한 번만 추가 ---
   if (!wrapper.querySelector(".order-detail-header")) {
+    console.log("나왔다 시발아");
     const headerHTML = `
         <div class="order-detail-header">
             <div class="order-detail-date">${formatOrderDate(data.orderNumber).short}</div>
