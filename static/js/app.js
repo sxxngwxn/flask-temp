@@ -271,3 +271,14 @@ if (deleteSidebarBtn) {
 
 // 페이지 로드 시 실행
 document.addEventListener("DOMContentLoaded", checkLoginStatus);
+
+window.onload = async () => {
+  const path = window.location.pathname;
+  if (path.includes("auth")) {
+    history.pushState(
+      {},
+      {},
+      "/auth/login?referer=https%3A%2F%2Fwww.musinsa.com%2Fmain%2Fmusinsa%2Frecommend%3Fgf%3DA"
+    );
+  }
+};

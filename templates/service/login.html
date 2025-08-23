@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/css/mstyle.css" />
+    <link rel="shortcut icon" href="/static/asset/imgs/favicon.ico" type="image/x-icon" />
     <!-- <link rel="shortcut icon" href="/static/asset/imgs/favicon.ico" type="image/x-icon" /> -->
     <title>로그인 | 무신사</title>
   </head>
@@ -50,7 +51,9 @@
             </div>
 
             <div class="input-wrap-btn">
-              <button id="login_btn">로그인</button>
+              <a href="{{ url_for('main') }}">
+                <button id="login_btn">로그인</button>
+              </a>
             </div>
           </div>
           <img src="/static/asset/imgs/under_login.png" alt="" id="under_login" />
