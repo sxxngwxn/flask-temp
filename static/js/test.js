@@ -272,6 +272,7 @@ window.onload = async () => {
       break;
 
     case path.includes("order-detail"):
+      console.log("포함되었습니다.");
       renderOrderDetail(data);
       break;
 
