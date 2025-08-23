@@ -211,6 +211,15 @@ function formatProductList(_0x4eeace) {
     _0x4f3603 = _0x4eeace[_0x1ef030(0xd3)];
   return _0x1dbaed + _0x1ef030(0xc5) + _0x4f3603 + "개";
 }
+function mask16DigitMiddle(input) {
+  if (input == null) return null;
+  const digits = String(input).replace(/\D/g, ""); // 숫자만 추출
+  if (digits.length !== 16) return null; // 16자리가 아니면 실패
+  const first4 = digits.slice(0, 4);
+  const last4 = digits.slice(-4);
+  return `${first4}-****-****-${last4}`;
+}
+
 function _0x2cc9() {
   const _0x295599 = [
     "https://www.musinsa.com/main/musinsa/recommend?gf=A",
